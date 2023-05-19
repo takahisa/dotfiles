@@ -44,6 +44,15 @@ if type "direnv" >/dev/null 2>&1; then
     eval "$(direnv hook "${SHELL}")"
 fi
 
+# Load user defined .bash_profile from XDG base directory
+if [[ -r "${XDG_CONFIG_HOME}/bash/profile" ]]; then
+    if [[ $- == *i* ]]; then
+	source "${XDG_CONFIG_HOME}/bash/profile"
+    else
+	source "${XDG_CONFIG_HOME}/bash/profile" 2>/dev/null 2>&1
+    fi
+fi
+
 # Load ~/.bashrc
 if [[ -r "${HOME}/.bashrc" ]]; then
     if [[ $- == *i* ]]; then
