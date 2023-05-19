@@ -12,6 +12,13 @@ alias ls="${LS_COMMAND}"
 alias ll="${LS_COMMAND} -lhFH"
 alias la="${LS_COMMAND} -lhFHa"
 
+alias tree='tree -C'
+alias diff='diff --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # Load user-defined .bash_aliases from XDG base directory
 if [[ -r  "${XDG_CONFIG_HOME}/bash/aliases" ]]; then
     if [[ $- == *i* ]]; then
