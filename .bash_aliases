@@ -19,6 +19,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias ..='cd ..'
+
 # Load user-defined .bash_aliases from XDG base directory
 if [[ -r  "${XDG_CONFIG_HOME}/bash/aliases" ]]; then
     if [[ $- == *i* ]]; then
