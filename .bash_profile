@@ -1,4 +1,7 @@
 #!/bin/bash
+# shellcheck disable=SC1090
+# shellcheck disable=SC1091
+# shellcheck disable=SC2139
 
 # https://support.apple.com/en-us/HT208050
 export BASH_SILENCE_DEPRECATION_WARNING="1"
@@ -39,4 +42,13 @@ fi
 # Load direnv shellenv
 if type "direnv" >/dev/null 2>&1; then
     eval "$(direnv hook "${SHELL}")"
+fi
+
+# Load ~/.bashrc
+if [[ -r "${HOME}/.bashrc" ]]; then
+    if [[ $- == *i* ]]; then
+	source "${HOME}/.bashrc"
+    else
+	source "${HOME}/.bashrc" >/dev/null 2>&1
+    fi
 fi
