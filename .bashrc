@@ -20,6 +20,10 @@ for f in "${HOME}/fzf.bash" "${XDG_CONFIG_HOME}/fzf/fzf.bash"; do
 done
 unset f
 
+# Load starship shellenv
+if type starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi
 
 # Load user-defined .bashrc from XDG base directory
 if [[ -r "${XDG_CONFIG_HOME}/bash/init" ]]; then
