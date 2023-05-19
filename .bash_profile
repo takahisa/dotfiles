@@ -31,6 +31,11 @@ else
     unset HOMEBREW
 fi
 
+# Load anyenv shellenv
+if type "anyenv" >/dev/null 2>&1; then
+    eval "$(anyenv init - --no-rehash)"
+fi
+
 # Load direnv shellenv
 if type "direnv" >/dev/null 2>&1; then
     eval "$(direnv hook "${SHELL}")"
