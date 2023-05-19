@@ -15,3 +15,8 @@ setup:
 
 	@printf $(LOGLEVEL_INFO) "stage1: Install homebrew formulae"
 	$(HOMEBREW) bundle
+
+	@printf $(LOGLEVEL_INFO) "Install pre-commit-hooks"
+	-@pre-commit install-hooks
+	@printf $(LOGLEVEL_INFO) "Install pre-commit"
+	-@pre-commit install
