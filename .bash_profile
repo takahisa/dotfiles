@@ -11,3 +11,22 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
 
 # Add ~/bin and ~/.local/bin to PATH
 export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
+
+# Load portable homebrew
+HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-${HOME}/.homebrew}"
+HOMEBREW="${HOMEBREW_PREFIX}/bin/brew"
+if [[ -x "${HOMEBREW}" ]]; then
+    export HOMEBREW_PREFIX
+    export HOMEBREW
+    eval "$("${HOMEBREW}" shellenv)"
+
+    for GNUBIN_PATH in "${HOMEBREW_PREFIX}"/opt/*/libexec/gnubin; do
+	export PATH="${GNUBIN_PATH}:${PATH}"
+    done
+    for GNUMAN_PATH in "${HOMEBREW_PREFIX}"/opt/*/libexec/gnuman; do
+	export MANPATH="${GNUMAN_PATH}:${MANPATH}"
+    done
+else
+    unset HOMEBREW_PREFIX
+    unset HOMEBREW
+fi

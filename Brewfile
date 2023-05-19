@@ -1,4 +1,12 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
+brew "coreutils"
+brew "diffutils"
+brew "findutils"
+brew "moreutils"
+brew "grep"
+brew "tree"
+brew "curl"
+brew "wget"
 brew "pre-commit"
