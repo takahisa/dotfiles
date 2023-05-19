@@ -25,6 +25,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias r='exec ${SHELL} -l'
+
 # Load user-defined .bash_aliases from XDG base directory
 if [[ -r  "${XDG_CONFIG_HOME}/bash/aliases" ]]; then
     if [[ $- == *i* ]]; then
