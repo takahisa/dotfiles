@@ -30,3 +30,8 @@ else
     unset HOMEBREW_PREFIX
     unset HOMEBREW
 fi
+
+# Load direnv shellenv
+if type "direnv" >/dev/null 2>&1; then
+    eval "$(direnv hook "${SHELL}")"
+fi
