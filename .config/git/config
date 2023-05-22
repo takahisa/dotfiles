@@ -1,0 +1,45 @@
+[user]
+	name = takahisa
+	email = takahisa.wt@gmail.com
+
+[core]
+	editor = "vim"
+	excludesfile = "${XDG_CONFIG_HOME}/git/ignore.private"
+
+[init]
+	defaultbranch = master
+
+[push]
+	default = tracking
+
+[pull]
+	ff = only
+	rebase = true
+
+[branch]
+	autosetuprebase = always
+
+[merge]
+	ff = false
+
+[color]
+	diff = true
+	grep = true
+	status = true
+	branch = true
+	interactive = true
+	ui = true
+
+[alias]
+	cc = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+	co = checkout
+	cb = checkout -b
+	cp = cherry-pick
+	br = branch
+	ba = branch -a
+	ls = ls-files
+	up = pull --rebase
+	now = "!git commit -m \"$(date '+%Y/%m/%d %H:%M:%S')\""
+
+[include]
+	path = "${XDG_CONFIG_HOME}/git/config.private"
