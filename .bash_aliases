@@ -28,6 +28,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias mosh='mosh --server "${SHELL} -lc mosh-server"'
+
 alias r='exec ${SHELL} -l'
 
 # Use neovim (neovim-remote) instead of vim
