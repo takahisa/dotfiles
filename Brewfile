@@ -14,6 +14,7 @@ brew "git"
 brew "git-lfs"
 brew "gh"
 brew "fzf"
+brew "ripgrep"
 brew "emacs"
 brew "neovim", args: ["HEAD"]
 brew "neovim-remote"
