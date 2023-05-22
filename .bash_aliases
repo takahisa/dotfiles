@@ -20,6 +20,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias ..='cd ..'
+alias .1='cd ..'
+alias .2='cd ../..'
+alias .3='cd ../../..'
 
 alias cp='cp -i'
 alias mv='mv -i'
