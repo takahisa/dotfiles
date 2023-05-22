@@ -252,7 +252,7 @@
    (setq initial-scratch-message "")
    (setq ring-bell-function 'ignore)
    (global-display-line-numbers-mode)
-   (savehist-mode t)
+   (savehist-mode 0)
    (tool-bar-mode 0)
    (menu-bar-mode 0)
    (show-paren-mode t)
