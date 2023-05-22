@@ -27,6 +27,11 @@ alias rm='rm -i'
 
 alias r='exec ${SHELL} -l'
 
+# Use neovim (neovim-remote) instead of vim
+if type nvim >/dev/null 2>&1; then
+  alias vim='nvr'
+fi
+
 # Load user-defined .bash_aliases from XDG base directory
 if [[ -r  "${XDG_CONFIG_HOME}/bash/aliases" ]]; then
   if [[ $- == *i* ]]; then
