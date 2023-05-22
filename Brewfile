@@ -12,5 +12,7 @@ brew "wget"
 brew "tmux"
 brew "fzf"
 brew "emacs"
+brew "neovim", args: ["HEAD"]
+brew "neovim-remote"
 brew "starship"
 brew "pre-commit"
