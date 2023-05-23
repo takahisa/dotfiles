@@ -57,7 +57,7 @@ It will work with a supported Linux system running on WSL2.
     make setup
     ```
 
-## Customize
+## Customization
 
 *dotfiles* provides several customization points to introduce your configurations.
 If you place the configuration files in the following path(s), it will be automatically loaded from dotfiles.
