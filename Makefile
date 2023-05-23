@@ -11,10 +11,10 @@ SOURCE_DIRECTORY := $(abspath .)
 TARGET_DIRECTORY := $(abspath $(HOME))
 
 SOURCES := $(abspath $(shell find . -mindepth 1 -type f -path './.*' \
-     -not -path './.git*'			\
-     -not -path './.git*/*'			\
-     -not -path './.pre-commit'	                \
-     -not -path './.pre-commit-config.yaml'	\
+     -not -path './.git*'                   \
+     -not -path './.git*/*'                 \
+     -not -path './.pre-commit'             \
+     -not -path './.pre-commit-config.yaml' \
 ))
 TARGETS := $(abspath $(patsubst $(SOURCE_DIRECTORY)/%, $(TARGET_DIRECTORY)/%, $(SOURCES)))
 
