@@ -5,7 +5,10 @@
 
 
 ## Prerequisites
-*dotfiles* supports the following operating systems running on machines with the `amd64` or `aarch64` architecture.
+*dotfiles* supports GNU/Linux on `amd64` architecture and macOS on `amd64` or `arm64` (`aarch64`) architecture.
+Windows is not directly supported, but will work with a supported Linux system running on WSL2.
+
+Due to linuxbrew limitations, we do not support Linux on the `arm64` architecture.
 
 ### Linux
 We have tested it on Ubuntu 20.04 and 22.04.
