@@ -31,7 +31,8 @@ setup:
 	$(HOMEBREW) update && $(HOMEBREW) upgrade
 
 	@printf $(LOGLEVEL_INFO) "stage1: Install homebrew formulae"
-	$(HOMEBREW) bundle --no-lock
+	$(HOMEBREW) bundle --no-lock --file "Brewfile"
+	$(HOMEBREW) bundle --no-lock --file "Caskfile"
 
 	@printf $(LOGLEVEL_INFO) "stage2: Install dotfiles"
 	@$(MAKE) install
