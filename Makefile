@@ -31,7 +31,7 @@ setup:
 	$(HOMEBREW) update && $(HOMEBREW) upgrade
 
 	@printf $(LOGLEVEL_INFO) "stage1: Install homebrew formulae"
-	$(HOMEBREW) bundle
+	$(HOMEBREW) bundle --no-lock
 
 	@printf $(LOGLEVEL_INFO) "stage2: Install dotfiles"
 	@$(MAKE) install
@@ -45,7 +45,6 @@ clean:
 	rm -f $(TARGETS)
 
 install: $(TARGETS)
-
 
 lint:
 	@pre-commit run --all
