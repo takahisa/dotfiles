@@ -6,6 +6,9 @@ set noundofile
 " Do not display the splash screen on startup
 set shortmess+=I
 
+" Do not use mouse
+set mouse=
+
 " Show the line numbers
 set number
 " Show the cursor positions at the bottom of screen
