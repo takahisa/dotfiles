@@ -34,7 +34,7 @@ alias r='exec ${SHELL} -l'
 
 # Use neovim (neovim-remote) instead of vim
 if type nvr >/dev/null 2>&1 && type nvim >/dev/null 2>&1; then
-  alias vim='nvr'
+  alias vim='nvr -s'
 fi
 
 # Load user-defined .bash_aliases from XDG base directory
