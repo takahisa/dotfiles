@@ -1,0 +1,6 @@
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+cask "font-hack"
+cask "font-hack-nerd-font"
+cask "hyper"
