@@ -1,6 +1,8 @@
 [@takahisa/dotfiles](http://github.com/takahisa/dotfiles/)
 ====
 
+![screenshot](https://i.imgur.com/G50yC8v.png "screenshot")
+
 *dotfiles* is a repository that centrally manages the [@takahisa](https://github.com/takahisa)'s configuration files and their setup.
 
 
