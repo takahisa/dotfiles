@@ -1,0 +1,5 @@
+#!/bin/bash
+# shellcheck disable=SC1090
+# shellcheck disable=SC1091
+
+export PATH="${XDG_DATA_HOME}/aquaproj-aqua/bin:${PATH}"
