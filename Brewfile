@@ -1,0 +1,42 @@
+tap "aquaproj/aqua"
+
+brew "coreutils"
+brew "diffutils"
+brew "findutils"
+brew "moreutils"
+brew "grep"
+brew "tree"
+brew "curl"
+brew "wget"
+brew "make"
+brew "readline"
+
+brew "git"
+brew "git-lfs"
+brew "gh"
+
+brew "bash"
+brew "bash-completion"
+brew "starship"
+brew "tmux"
+brew "mosh"
+
+brew "emacs"
+brew "neovim"
+brew "neovim-remote"
+
+brew "ripgrep"
+brew "fzf"
+brew "ghq"
+brew "bat"
+brew "eza"
+brew "zoxide"
+brew "jq"
+brew "yq"
+
+brew "aquaproj/aqua/aqua"
+brew "asdf"
+
+cask "font-hack"
+cask "font-hack-nerd-font"
+cask "hyper"

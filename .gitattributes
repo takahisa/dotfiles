@@ -1,0 +1,12 @@
+/.github/**					export-ignore
+/.gitignore					export-ignore
+/.gitattributes			export-ignore
+/Makefile						export-ignore
+/Brewfile						export-ignore
+/Brewfile.lock.json	export-ignore
+/aqua.yaml						export-ignore
+
+*.md				export-ignore
+*.tar			export-ignore
+*.tar.gz		export-ignore
+*.zip			export-ignore
