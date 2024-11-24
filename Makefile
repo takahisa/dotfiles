@@ -48,7 +48,7 @@ $(MAKEFILE_DIR)/Brewfile:
 	$(HOMEBREW) bundle dump
 
 $(MAKEFILE):
-	git -C $(MAKEFILE_DIR) rev-parse --is-inside-work-tree || git -C $(MAKEFILE) clone --depth=1 https://github.com/takahisa/dotfiles
+	git -C $(MAKEFILE_DIR) rev-parse --is-inside-work-tree || git -C $(MAKEFILE_DIR) clone --depth=1 https://github.com/takahisa/dotfiles
 
 $(INSTALL): $(INSTALL_PREFIX)/% : $(MAKEFILE_DIR)/%
 	@mkdir -p $(@D) && ln -snf $< $@ && echo $@
