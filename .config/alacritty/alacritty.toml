@@ -1,0 +1,75 @@
+[window.dimensions]
+columns = 120
+lines = 40
+
+[window.padding]
+x = 10
+y = 10
+
+[window]
+option_as_alt = "OnlyLeft"
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
+program = '/bin/bash'
+args = ['-c', '-l', 'tmux a -t default || tmux new -s default']
+
+[font.normal]
+family = "Hack Nerd Font"
+style  = "Regular"
+
+[font.italic]
+family = "Hack Nerd Font"
+style  = "Italic"
+
+[font.bold]
+family = "Hack Nerd Font"
+style  = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style  = "BoldItalic"
+
+[font]
+size = 18.0
+
+[colors.primary]
+foreground = "#F8F8F2"
+background = "#282A36"
+
+[colors.normal]
+black   = "#282A36"
+white   = "#F8F8F2"
+red     = "#FF5555"
+blue    = "#BD93F9"
+cyan    = "#8BE9FD"
+green   = "#50FA7B"
+yellow  = "#F1FA8C"
+magenta = "#7272a4"
+
+[colors.bright]
+white   = "#F8F8F2"
+black   = "#282A36"
+red     = "#E63946"
+blue    = "#8E4FE6"
+cyan    = "#39A5D8"
+green   = "#2FC461"
+yellow  = "#D4B338"
+magenta = "#5D6CDF"
+
+[[keyboard.bindings]]
+key = "¥"
+chars = "\u005C"
+
+[[keyboard.bindings]]
+key = "¥"
+chars = "\u00A5"
+mods = "Alt"
+
+[[mouse.bindings]]
+mouse = "Right"	
+action = "PasteSelection"

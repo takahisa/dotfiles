@@ -1,0 +1,5 @@
+# Disable bell
+set bell-style none
+
+# Disable training slash completions
+set mark-directories Off

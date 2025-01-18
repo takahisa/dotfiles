@@ -1,0 +1,44 @@
+format = """
+$username\
+[](fg:#44475a bg:#6272a4)\
+$hostname\
+[](fg:#44475a bg:#6272a4)\
+$directory\
+[](fg:#6272a4)\
+$git_branch\
+$git_status\
+[ ](none)
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "fg:#f8f8f2 bg:#6272a4"
+style_root = "fg:#f8f8f2 bg:#6272a4"
+format = '[ $user ]($style)'
+disabled = false
+
+[hostname]
+style   = "fg:#f8f8f2 bg:#6272a4"
+format  = "[ $hostname ]($style)"
+ssh_only = false
+
+[directory]
+style = "fg:#f8f8f2 bg:#6272a4"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo  = false
+
+[git_branch]
+symbol = ""
+style  = "fg:#44475a bg:#f1fa8c"
+format = '[[](fg:#f1fa8c inverted) $symbol $branch]($style)'
+
+[git_status]
+style  = "fg:#44475a bg:#f1fa8c"
+format = '[ $all_status$ahead_behind [](fg:#f1fa8c)]($style)'

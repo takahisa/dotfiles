@@ -1,0 +1,61 @@
+name: Lint and Test
+ 
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-and-test:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-24.04
+          - ubuntu-22.04
+          - macos-14
+          - macos-13
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Homebrew install configuration [darwin:arm64]
+        run: |
+          cat >>"${GITHUB_ENV}" <<'EOF'
+          HOMEBREW_REPOSITORY=/opt/homebrew
+          HOMEBREW_CELLAR=/opt/homebrew/Cellar
+          HOMEBREW_PREFIX=/opt/homebrew
+          EOF
+        if: runner.os == 'macOS' && runner.arch == 'ARM64'
+      - name: Homebrew install configuration [darwin:amd64]
+        run: |
+          cat >>"${GITHUB_ENV}" <<'EOF'
+          HOMEBREW_REPOSITORY=/usr/local/Homebrew
+          HOMEBREW_CELLAR=/usr/local/Homebrew/Cellar
+          HOMEBREW_PREFIX=/usr/local/
+          EOF
+        if: runner.os == 'macOS' && (runner.arch == 'X86' || runner.arch == 'X64')
+      - name: Homebrew install configuration [linux]
+        run: |
+          cat >>"${GITHUB_ENV}" <<'EOF'
+          HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew
+          HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
+          HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+          EOF
+        if: runner.os == 'Linux'
+      - name: Aqua install configuration
+        run: |
+          echo "AQUA_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >>"${GITHUB_ENV}"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.HOMEBREW_REPOSITORY }}
+            ~/.config
+            ~/.local/share
+            ~/.local/state
+          key: dotfiles-${{ runner.os }}-${{ runner.arch }}
+      - run: make all
