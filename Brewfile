@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-
 # https://aquaproj.github.io/docs/install/#homebrew
 tap "aquaproj/aqua"
 
