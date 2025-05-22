@@ -65,10 +65,16 @@ setup: $(HOMEBREW)
 clean:
 	rm -f $(TARGETS)
 
-lint:
+lint::
+	shellcheck $(filter %.bash, $(SOURCES)) $(MAKEFILE_DIR)/.bash_profile $(MAKEFILE_DIR)/.bashrc
 
-test:
+lint::
+	actionlint
+
+test::
 	$(HOMEBREW_PREFIX)/bin/emacs -Q --batch --no-init-file --no-site-file --eval '(load-file "$(MAKEFILE_DIR)/.config/emacs/init.el")'
+
+test::
 	$(HOMEBREW_PREFIX)/bin/nvim --headless -c 'quit' -u $(MAKEFILE_DIR)/.config/nvim/init.vim
 	$(HOMEBREW_PREFIX)/bin/nvim --headless -c 'quit' -u $(MAKEFILE_DIR)/.config/nvim-vscode/init.vim
 
