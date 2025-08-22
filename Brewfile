@@ -1,6 +1,3 @@
-# https://aquaproj.github.io/docs/install/#homebrew
-tap "aquaproj/aqua"
-
 # GNU toolchain for macOS
 brew "coreutils"
 brew "moreutils"
@@ -47,7 +44,7 @@ brew "jq"
 brew "yq"
 
 # Package managers
-brew "aquaproj/aqua/aqua"
+brew "aqua"
 brew "asdf"
 
 # Terminal Multiplexer

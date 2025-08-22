@@ -16,8 +16,8 @@ jobs:
         os:
           - ubuntu-24.04
           - ubuntu-22.04
+          - macos-15
           - macos-14
-          - macos-13
       fail-fast: false
 
     runs-on: ${{ matrix.os }}
@@ -50,12 +50,4 @@ jobs:
       - name: Aqua install configuration
         run: |
           echo "AQUA_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >>"${GITHUB_ENV}"
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ${{ env.HOMEBREW_REPOSITORY }}
-            ~/.config
-            ~/.local/share
-            ~/.local/state
-          key: dotfiles-${{ runner.os }}-${{ runner.arch }}
       - run: make all

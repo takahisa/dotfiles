@@ -66,10 +66,10 @@ clean:
 	rm -f $(TARGETS)
 
 lint::
-	shellcheck $(filter %.bash, $(SOURCES)) $(MAKEFILE_DIR)/.bash_profile $(MAKEFILE_DIR)/.bashrc
+	$(AQUA) exec shellcheck $(filter %.bash, $(SOURCES)) $(MAKEFILE_DIR)/.bash_profile $(MAKEFILE_DIR)/.bashrc
 
 lint::
-	actionlint
+	$(AQUA) exec actionlint
 
 test::
 	$(HOMEBREW_PREFIX)/bin/emacs -Q --batch --no-init-file --no-site-file --eval '(load-file "$(MAKEFILE_DIR)/.config/emacs/init.el")'
